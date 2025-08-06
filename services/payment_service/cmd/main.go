@@ -4,5 +4,5 @@ import "common/logger"
 
 func main() {
 	logger := logger.NewLogger()
-	logger.Log("123")
+	logger.Info("123")
 }

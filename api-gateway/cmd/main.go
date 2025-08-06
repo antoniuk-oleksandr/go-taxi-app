@@ -6,5 +6,5 @@ import (
 
 func main() {
 	logger := logger.NewLogger()
-	logger.Log("hello, world")
+	logger.Info("hello, world")
 }

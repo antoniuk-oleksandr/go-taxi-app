@@ -1,13 +1,24 @@
 package logger
 
-import "log"
+import (
+	"log/slog"
+	"os"
+)
 
-type logger struct{}
-
-func (l *logger) Log(value any) {
-	log.Println(value)
+type logger struct{
+	slogLogger *slog.Logger
 }
 
 func NewLogger() Logger {
-	return &logger{}
+	return &logger{
+		slogLogger: slog.New(slog.NewJSONHandler(os.Stdout, nil)),
+	}
+}
+
+func (logger *logger) Error(value ...any) {
+	panic("unimplemented")
+}
+
+func (logger *logger) Info(msg string, args ...any) {
+	logger.slogLogger.Info(msg, args)
 }

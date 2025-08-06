@@ -1,0 +1,8 @@
+version: v1
+name: go-taxi-app/alex/common
+lint:
+  use:
+    - DEFAULT
+breaking:
+  use:
+    - FILE

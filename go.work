@@ -6,8 +6,8 @@ use (
 	./services/auth_service
 	./services/driver_service
 	./services/location_service
-	./services/ride_service
-	./services/payment_service
 	./services/notification_service
+	./services/payment_service
+	./services/ride_service
 	./services/users_service
 )

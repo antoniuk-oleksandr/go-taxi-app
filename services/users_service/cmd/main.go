@@ -6,5 +6,5 @@ import (
 
 func main() {
 	logger := logger.NewLogger()
-	logger.Log("users service")
+	logger.Info("users service")
 }

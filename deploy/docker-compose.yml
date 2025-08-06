@@ -1,0 +1,23 @@
+# docker-compose.yml
+version: '3'
+services:
+  loki:
+    image: grafana/loki:3.0.0
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+
+  promtail:
+    image: grafana/promtail:3.0.0
+    volumes:
+      - /var/log:/var/log
+      - ./promtail-config.yaml:/etc/promtail/config.yaml
+    depends_on:
+      - loki
+
+  grafana:
+    image: grafana/grafana-enterprise:11.0.0
+    ports:
+      - "3000:3000"
+    depends_on:
+      - loki

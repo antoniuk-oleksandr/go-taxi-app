@@ -6,5 +6,5 @@ import (
 
 func main() {
 	logger := logger.NewLogger()
-	logger.Log("auth service")
+	logger.Info("auth service")
 }

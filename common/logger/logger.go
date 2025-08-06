@@ -1,5 +1,6 @@
 package logger
 
 type Logger interface {
-	Log(value any)
+	Info(msg string, args ...any)
+	Error(value ...any)
 }
